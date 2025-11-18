@@ -1,10 +1,3 @@
--- CRIAÇÃO DO BANCO
-CREATE DATABASE coffeedream;
-
--- USANDO O BANCO
-\c coffeedream;
-
--- TABELAS (DDL)
 CREATE TABLE produtos (
     id SERIAL PRIMARY KEY,
     nome VARCHAR(50) NOT NULL,
@@ -25,7 +18,6 @@ CREATE TABLE pedidos (
     quantidade INT
 );
 
--- INSERTS
 INSERT INTO produtos (nome, preco, estoque) VALUES
 ('Café Expresso', 7.50, 25),
 ('Cappuccino', 12.00, 18),
@@ -39,7 +31,6 @@ INSERT INTO pedidos (cliente_id, produto_id, quantidade) VALUES
 (1, 2, 1),
 (2, 1, 3);
 
--- SELECTS
 SELECT * FROM produtos;
 
 SELECT nome, preco FROM produtos
@@ -48,11 +39,9 @@ WHERE preco BETWEEN 7 AND 10;
 SELECT nome FROM produtos
 WHERE preco NOT BETWEEN 8 AND 20;
 
--- UPDATE
 UPDATE produtos
 SET preco = 8.00
 WHERE nome = 'Café Expresso';
 
--- DELETE LIKE
 DELETE FROM clientes
 WHERE email LIKE '%gmail%';
